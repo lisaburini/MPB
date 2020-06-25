@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.ProfilePage"
+             Title="Profile"
+             NavigationPage.HasBackButton="True">
+
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="FillAndExpand"
+        Margin="50"
+        Orientation="Vertical"
+        Spacing="40">
+        <StackLayout Orientation="Horizontal"
+                     Spacing="40">
+
+            <Label Text="Name"
+           HorizontalOptions="Start"
+           TextColor="{StaticResource textColorPrimaryInverse}"
+           FontSize="15"
+           FontAttributes="Bold" />
+
+            <Label
+               x:Name="LabelName"
+               Text="---"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource grey}"
+               FontSize="15"
+               FontAttributes="Bold" />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     Spacing="40">
+
+            <Label Text="Last Name"
+           HorizontalOptions="Start"
+           TextColor="{StaticResource textColorPrimaryInverse}"
+           FontSize="15"
+           FontAttributes="Bold" />
+
+            <Label x:Name="LabelLastName"
+           Text="---"
+           HorizontalOptions="Center"
+           TextColor="{StaticResource grey}"
+           FontSize="15"
+           FontAttributes="Bold" />
+
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     Spacing="40">
+
+            <Label Text="Email"
+           HorizontalOptions="Start"
+           TextColor="{StaticResource textColorPrimaryInverse}"
+           FontSize="15"
+           FontAttributes="Bold" />
+
+            <Label x:Name="LabelEmail"
+           Text="---"
+           HorizontalOptions="Center"
+           TextColor="{StaticResource grey}"
+           FontSize="15"
+           FontAttributes="Bold" />
+
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
