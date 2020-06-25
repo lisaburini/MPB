@@ -74,7 +74,7 @@ namespace MPB.Droid
             }
         }
 
-        public async Task<string> AddTransaction(string category, float money)
+        public async Task<string> AddTransaction(string category, string money)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace MPB.Droid
 
         }
 
-        public async Task<string> AddTransaction2(string category, float money)
+        public async Task<string> AddTransaction2(string category, string money)
         {
             try
             {
@@ -160,7 +160,7 @@ namespace MPB.Droid
                 {
                     Type = documentSnapshot.GetString("tipologia"),
                     Category = documentSnapshot.GetString("categoria"),
-                    Money = (float)documentSnapshot.Get("cifra"),
+                    Money = documentSnapshot.GetString("cifra"),
                     Date = documentSnapshot.GetString("data")
                 });
             }
@@ -183,12 +183,19 @@ namespace MPB.Droid
             {
                 if (String.Equals(documentSnapshot.GetString("tipologia"), "Earnings"))
                 {
-                    sum += (float)documentSnapshot.Get("cifra");
+                    //sum += (float)documentSnapshot.Get("cifra");
+                    //sum += float.Parse(documentSnapshot.GetString("cifra"));
+                    //Math.Round(val, 2)
+                    sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
+                   
+
                 }
                 else if (String.Equals(documentSnapshot.GetString("tipologia"), "Outflows"))
                 {
-                    sum -= (float)documentSnapshot.Get("cifra");
+                    //sum -= (float)documentSnapshot.Get("cifra");
+                    sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
                 }
+               
 
             }
             string sumString;
@@ -225,7 +232,7 @@ namespace MPB.Droid
                     {
                         Type = documentSnapshot.GetString("tipologia"),
                         Category = documentSnapshot.GetString("categoria"),
-                        Money = (float)documentSnapshot.Get("cifra"),
+                        Money = documentSnapshot.GetString("cifra"),
                         Date = documentSnapshot.GetString("data")
                     });
                 }
@@ -255,14 +262,16 @@ namespace MPB.Droid
             {
                 if (String.Equals(documentSnapshot.GetString("tipologia"), "Earnings"))
                 {
-                    sum += (float)documentSnapshot.Get("cifra");
+                    sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
                 }
                 else if (String.Equals(documentSnapshot.GetString("tipologia"), "Outflows"))
                 {
-                    sum -= (float)documentSnapshot.Get("cifra");
+                    sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
                 }
 
             }
+
+            
             string sumString;
             if (sum >= 0)
             {
@@ -277,7 +286,7 @@ namespace MPB.Droid
         }
 
 
-
+        
 
         public async Task<float> SumEarnings()
         {
@@ -292,7 +301,8 @@ namespace MPB.Droid
 
             foreach (DocumentSnapshot documentSnapshot in allTransactionsQuerySnapshot.Documents)
             {
-                sum += (float)documentSnapshot.Get("cifra");
+                //sum += (float)documentSnapshot.Get("cifra");
+                sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
             }
 
             return sum;
@@ -312,12 +322,13 @@ namespace MPB.Droid
 
             foreach (DocumentSnapshot documentSnapshot in allTransactionsQuerySnapshot.Documents)
             {
-                sum -= (float)documentSnapshot.Get("cifra");
+                sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
             }
 
             return sum;
 
         }
+        
 
 
     }

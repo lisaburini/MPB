@@ -30,7 +30,8 @@ namespace MPB
             else
             {
                 string category = OutflowsCategory.SelectedItem.ToString();
-                float moneyTrans = float.Parse(money.Text);
+                //float moneyTrans = float.Parse(money.Text);
+                string moneyTrans = money.Text; //valore da salvare nel campo cifra
 
                 string task = await firestore.AddTransaction2(category, moneyTrans);
                 if (String.Equals(task, "ok"))

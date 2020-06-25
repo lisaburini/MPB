@@ -15,8 +15,6 @@ namespace MPB
         }
 
 
-
-
         async private void AddEarnings(object sender, EventArgs e)
         {
 
@@ -32,7 +30,9 @@ namespace MPB
             else
             {
                 string category = EarningsCategory.SelectedItem.ToString();
-                float moneyTrans = float.Parse(money.Text);
+
+                //float moneyTrans = float.Parse(money.Text);
+                string moneyTrans = money.Text; //valore da salvare nel campo cifra
 
                 string task = await firestore.AddTransaction(category, moneyTrans);
                 if (String.Equals(task, "ok"))

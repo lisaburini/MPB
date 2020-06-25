@@ -14,9 +14,9 @@ namespace MPB
 
         Task<string> EditData(string name, string lastName);
 
-        Task<string> AddTransaction(string category, float money);
+        Task<string> AddTransaction(string category, string money);
 
-        Task<string> AddTransaction2(string category, float money);
+        Task<string> AddTransaction2(string category, string money);
 
         Task<ObservableCollection<Transaction>> GetTransactions();
 

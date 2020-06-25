@@ -70,7 +70,8 @@
                                    FontSize="15"
                                    FontAttributes="Bold"
                                    HorizontalTextAlignment="End"
-                                   HorizontalOptions="EndAndExpand"></Label>
+                                   HorizontalOptions="EndAndExpand"
+                                   Margin="0, 0, 80, 0"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
