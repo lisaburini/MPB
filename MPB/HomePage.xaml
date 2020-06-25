@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.HomePage">
+
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="FillAndExpand"
+        Margin="50" 
+        Orientation="Vertical"
+        Spacing="10">
+        <Image Source="logo.png" 
+               Aspect="AspectFit" 
+               WidthRequest="225"
+               HeightRequest="80"
+               HorizontalOptions="Center"/>
+        <Label Text="Hi and thanks for downloading our app!
+Here are some tips to get you started:
+use the navigation bar at the top of your screen
+to move around the main sections of our app,
+you can manage your profile with the menu on the Profile section."
+
+               XAlign="Center"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource textColorPrimaryInverse}"
+               FontSize="20"
+               FontAttributes="Bold" />
+    </StackLayout>
+     
+</ContentPage>

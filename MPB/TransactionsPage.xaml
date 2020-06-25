@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.TransactionsPage"
+             x:Name="ListPage">
+
+
+    <StackLayout Padding="5"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand"
+                 Orientation="Vertical">
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            Padding="30"
+            Orientation="Horizontal">
+            <StackLayout
+                Orientation="Vertical"
+                HorizontalOptions="Start">
+
+                
+
+                <Picker x:Name="PickerCategory"
+                        IsVisible= 'True'
+                        IsEnabled= 'True'
+                        WidthRequest="100"
+                        HeightRequest="50"
+                        HorizontalOptions="Start"
+                        Title="Categories"
+                        SelectedIndexChanged="PickerSelectedIndexChanged">
+                       
+                    <Picker.Items>
+                        <x:String>All</x:String>
+                        <x:String>Salary</x:String>
+                        <x:String>Pension</x:String>
+                        <x:String>Gift</x:String>
+                        <x:String>Income</x:String>
+                        <x:String>+Other</x:String>
+                        <x:String>Home</x:String>
+                        <x:String>Health</x:String>
+                        <x:String>Car</x:String>
+                        <x:String>Shopping</x:String>
+                        <x:String>-Other</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+
+            <Label Text=""
+                   x:Name="labelSum"
+                   TextColor="{StaticResource colorPrimary}"
+                   HorizontalTextAlignment="Center"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <Grid>
+            <ListView x:Name="TransactionsList"
+                  ItemsSource="{Binding Source={x:Reference ListPage},
+                  Path=BindingContext.MyList}" IsVisible="True">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="false">
+                            <StackLayout
+                            Orientation="Horizontal"
+                            Padding="10">
+                                <Label Text="{Binding Type}"
+                                   FontAttributes="Bold"></Label>
+                                <Label Text="{Binding Category}"></Label>
+                                <Label Text="{Binding Date}"></Label>
+                                <Label Text="{Binding Money}"
+                                   FontSize="15"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="End"
+                                   HorizontalOptions="EndAndExpand"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="+"
+                    FontSize="25"
+                    TextColor="{StaticResource textColorPrimary}"
+                    x:Name="AddButton"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="End"
+                    WidthRequest="60"
+                    HeightRequest="60"
+                    BackgroundColor="{StaticResource colorPrimary}" 
+                    BorderRadius="30"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Clicked="ShowAddTrans"/>
+        </Grid>
+
+    </StackLayout>
+
+</ContentPage>

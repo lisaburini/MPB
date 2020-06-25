@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.SectionProfilePage"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text ="Profile"  
+                Priority="1" Order="Secondary"  Clicked="Profile"/>
+        <ToolbarItem Text ="Edit Profile"  
+              Priority="2" Order="Secondary" Clicked="EditProfile" />
+        <ToolbarItem Text ="Edit Password"  
+              Priority="3" Order="Secondary" Clicked="EditPassword" />
+        <ToolbarItem Text ="Logout"  
+              Priority="4" Order="Secondary" Clicked="SignOut" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout  Margin="50">
+         <Label Text="Choose a function from the menu at the top right"
+           HorizontalOptions="Center"
+           TextColor="{StaticResource grey}"
+           FontSize="20"
+           FontAttributes="Bold" />
+    </StackLayout>
+</ContentPage>
