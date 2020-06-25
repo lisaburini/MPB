@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.AddEarningsPage"
+             Title="Add Earnings">
+    <StackLayout
+        Orientation="Vertical"
+        Margin="20, 30"
+        Spacing="20">
+
+        <Picker x:Name="EarningsCategory"
+                HorizontalOptions="CenterAndExpand"
+                Title="Select Category"
+                WidthRequest="250">
+                
+            <Picker.Items>
+                <x:String>Salary</x:String>
+                <x:String>Pension</x:String>
+                <x:String>Gift</x:String>
+                <x:String>Income</x:String>
+                <x:String>+Other</x:String>
+            </Picker.Items>
+        </Picker>
+
+
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+
+            <Entry x:Name="money"
+            Placeholder="Money"
+            Keyboard="Numeric"
+            HorizontalOptions="Center"
+            WidthRequest="200"/>
+
+            <Image Source="euro.png" 
+               Aspect="AspectFit" 
+               WidthRequest="40"
+               HeightRequest="40"
+               />
+        </StackLayout>
+
+        <StackLayout
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Button Text="Add" 
+             HorizontalOptions="Center" 
+             BackgroundColor="{StaticResource colorPrimary}"
+             Clicked="AddEarnings"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
