@@ -19,23 +19,13 @@ namespace MPB
 
             if (Token != null)
             {
-                App.Current.MainPage = new MainPage();
-                //await Navigation.PushAsync(new MainPage());
+                App.Current.MainPage = new MainPage();;
             }
             else if (Token == null)
             {
                 await App.Current.MainPage.DisplayAlert("Error", "Try Again", "OK");
 
             }
-
-            /*bool valueSignup = auth.SignUp(email.Text, password.Text, name.Text, lastName.Text);
-            if (valueSignup) {
-                App.Current.MainPage = new NavigationPage(new MainPage());
-
-            } else  {
-                App.Current.MainPage.DisplayAlert("Error", "Try Again", "OK");
-            }
-            */
         }
     }
 }

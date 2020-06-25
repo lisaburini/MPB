@@ -24,9 +24,6 @@ namespace MPB
             LabelLastName.Text = values.GetValue(1).ToString();
             LabelEmail.Text = values.GetValue(2).ToString();
 
-            //var values = firestore.GetData().Result;
-            //LabelName.Text = (string)values.GetValue(0);
-
         }
     }
 }

@@ -18,8 +18,6 @@
                 Orientation="Vertical"
                 HorizontalOptions="Start">
 
-                
-
                 <Picker x:Name="PickerCategory"
                         IsVisible= 'True'
                         IsEnabled= 'True'

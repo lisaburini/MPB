@@ -15,8 +15,6 @@ namespace MPB
         }
 
 
-
-
         async private void AddOutflows(object sender, EventArgs e)
         {
 
@@ -33,7 +31,6 @@ namespace MPB
             {
                 string category = OutflowsCategory.SelectedItem.ToString();
                 float moneyTrans = float.Parse(money.Text);
-                //decimal decimalValue = Math.Round((decimal)floatValue, 2);
 
                 string task = await firestore.AddTransaction2(category, moneyTrans);
                 if (String.Equals(task, "ok"))

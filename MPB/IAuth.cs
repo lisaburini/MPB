@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 
 namespace MPB
 {
+    //i metodi di questa interfaccia sono implementati nella classe AuthDroid in MPB.Android
     public interface IAuth
     {
         Task<string> LoginWithEmailPassword(string email, string password);

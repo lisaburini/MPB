@@ -32,14 +32,6 @@ namespace MPB
                     await App.Current.MainPage.DisplayAlert("Error", "Try Again", "OK");
                 }
             }
-
-
-
-
-
-
-
-
         }
 
 

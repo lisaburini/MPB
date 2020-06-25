@@ -47,10 +47,5 @@ namespace MPB
             this.LineChart.Chart = chart;
 
         }
-
-
-
-
-
     }
 }

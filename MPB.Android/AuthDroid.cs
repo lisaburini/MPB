@@ -31,7 +31,7 @@ namespace MPB.Droid
 
             catch (Exception e)
             {
-                Debug.WriteLine($"Error:{e}");
+                //Debug.WriteLine($"Error:{e}");
                 return null;
             }
 
@@ -88,11 +88,9 @@ namespace MPB.Droid
 
                 return token.Token;
 
-
             }
             catch (Exception e)
             {
-                Debug.WriteLine($"Error:{e}");
                 return null;
             }
 

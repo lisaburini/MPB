@@ -15,10 +15,10 @@
                      Spacing="40">
 
             <Label Text="Name"
-           HorizontalOptions="Start"
-           TextColor="{StaticResource textColorPrimaryInverse}"
-           FontSize="15"
-           FontAttributes="Bold" />
+               HorizontalOptions="Start"
+               TextColor="{StaticResource textColorPrimaryInverse}"
+               FontSize="15"
+               FontAttributes="Bold" />
 
             <Label
                x:Name="LabelName"
@@ -34,17 +34,17 @@
                      Spacing="40">
 
             <Label Text="Last Name"
-           HorizontalOptions="Start"
-           TextColor="{StaticResource textColorPrimaryInverse}"
-           FontSize="15"
-           FontAttributes="Bold" />
+               HorizontalOptions="Start"
+               TextColor="{StaticResource textColorPrimaryInverse}"
+               FontSize="15"
+               FontAttributes="Bold" />
 
             <Label x:Name="LabelLastName"
-           Text="---"
-           HorizontalOptions="Center"
-           TextColor="{StaticResource grey}"
-           FontSize="15"
-           FontAttributes="Bold" />
+               Text="---"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource grey}"
+               FontSize="15"
+               FontAttributes="Bold" />
 
         </StackLayout>
 
@@ -52,17 +52,17 @@
                      Spacing="40">
 
             <Label Text="Email"
-           HorizontalOptions="Start"
-           TextColor="{StaticResource textColorPrimaryInverse}"
-           FontSize="15"
-           FontAttributes="Bold" />
+               HorizontalOptions="Start"
+               TextColor="{StaticResource textColorPrimaryInverse}"
+               FontSize="15"
+               FontAttributes="Bold" />
 
             <Label x:Name="LabelEmail"
-           Text="---"
-           HorizontalOptions="Center"
-           TextColor="{StaticResource grey}"
-           FontSize="15"
-           FontAttributes="Bold" />
+               Text="---"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource grey}"
+               FontSize="15"
+               FontAttributes="Bold" />
 
         </StackLayout>
 

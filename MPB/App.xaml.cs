@@ -13,7 +13,6 @@ namespace MPB
 
             if (DependencyService.Get<IAuth>().IsUserLoggedIn())
             {
-                //MainPage = new NavigationPage(new MainPage());
                 MainPage = new MainPage();
             }
             else

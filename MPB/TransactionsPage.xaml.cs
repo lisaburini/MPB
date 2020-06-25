@@ -26,15 +26,13 @@ namespace MPB
         {
             if ((String.IsNullOrEmpty((string)PickerCategory.SelectedItem) || String.Equals((string)PickerCategory.SelectedItem, "All")))
             {
-
-                GetListTransactions();
-                GetTotal();
+                GetListTransactions(); //se non ci sono filtri mostra tutte le transazioni
+                GetTotal(); //bilancio totale
             }
             else
             {
-
-                GetListSomeTransactions((string)(PickerCategory.SelectedItem));
-                GetPartial((string)(PickerCategory.SelectedItem));
+                GetListSomeTransactions((string)(PickerCategory.SelectedItem)); //mostra transazioni del filtro totale
+                GetPartial((string)(PickerCategory.SelectedItem)); //mostra i soldi spesi/guadagnati per una categoria
             }
 
         }
@@ -78,7 +76,7 @@ namespace MPB
         private async void GetListSomeTransactions(string categorySelected)
         {
             MyList = new ObservableCollection<Transaction>();
-            ObservableCollection<Transaction> task = await firestore.GetSomeTransactions(categorySelected); //ritorna la lista delle transazioni
+            ObservableCollection<Transaction> task = await firestore.GetSomeTransactions(categorySelected); //ritorna la lista delle transazioni della categoria selezionta
             MyList = task;
             TransactionsList.ItemsSource = MyList;
 
@@ -87,7 +85,7 @@ namespace MPB
         private async void GetPartial(string categorySelected)
         {
             string total = await firestore.PartialSum(categorySelected);
-            labelSum.Text = total;
+            labelSum.Text = total; //setto il valore della label
         }
 
 

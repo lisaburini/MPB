@@ -33,7 +33,6 @@ namespace MPB
             {
                 string category = EarningsCategory.SelectedItem.ToString();
                 float moneyTrans = float.Parse(money.Text);
-                //decimal decimalValue = Math.Round((decimal)floatValue, 2);
 
                 string task = await firestore.AddTransaction(category, moneyTrans);
                 if (String.Equals(task, "ok"))
@@ -57,7 +56,6 @@ namespace MPB
                     && !String.Equals(c, '9') && !String.Equals(c, '.'))
                     return false;
             }
-
             return true;
         }
 

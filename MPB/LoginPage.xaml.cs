@@ -23,8 +23,7 @@ namespace MPB
         {
             var emailValue = email.Text;
             var passwordValue = password.Text;
-
-            //App.Current.MainPage = new NavigationPage(new MainPage());
+            
 
             if (string.IsNullOrEmpty(emailValue) || string.IsNullOrEmpty(passwordValue))
             {
@@ -34,10 +33,10 @@ namespace MPB
 
             string Token = await auth.LoginWithEmailPassword(email.Text, password.Text);
 
-            if (Token != null)
+            if (Token != null) //se l'autenticazione va a buon fine si entra nella tabbed page
             {
-                App.Current.MainPage = new MainPage();
-                //await Navigation.PushAsync(new MainPage());
+                App.Current.MainPage = new MainPage(); 
+                
             }
             else if (Token == null)
             {

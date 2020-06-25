@@ -7,6 +7,7 @@ using MPB.Models;
 
 namespace MPB
 {
+    //i metodi di questa interfaccia sono implementati nella classe FirestoreDroid in MPB.Android
     public interface IFirestore
     {
         Task<string[]> GetData();
