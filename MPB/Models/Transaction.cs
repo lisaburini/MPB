@@ -1,5 +1,5 @@
 ﻿using System;
-namespace progetto_lisa.Models
+namespace MPB.Models
 {
     public class Transaction
     {
