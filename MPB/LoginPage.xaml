@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.LoginPage"
+             Title="Login"
+             NavigationPage.HasBackButton="True">
+    
+     <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="FillAndExpand"
+        Margin="50, 130"
+        Orientation="Vertical"
+        Spacing="10">
+        
+        <Entry x:Name="email"
+            Keyboard="Email"
+            Placeholder="Email"
+            HorizontalOptions="Center"
+            WidthRequest="250"/>
+        <Entry x:Name="password"
+           Placeholder="Password" 
+           IsPassword="True" 
+           HorizontalOptions="Center"
+           WidthRequest="250"/>
+        <Button Text="Login" 
+           BackgroundColor="{StaticResource colorPrimary}"
+           HorizontalOptions="Center"
+           Clicked="Login"/>
+           
+    </StackLayout>
+
+</ContentPage>

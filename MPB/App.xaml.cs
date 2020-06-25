@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace MPB
 {
     public partial class App : Application
@@ -10,7 +11,17 @@ namespace MPB
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            if (DependencyService.Get<IAuth>().IsUserLoggedIn())
+            {
+                //MainPage = new NavigationPage(new MainPage());
+                MainPage = new MainPage();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new IntroPage());
+            }
+
+
         }
 
         protected override void OnStart()

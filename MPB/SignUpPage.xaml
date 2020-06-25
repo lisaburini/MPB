@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.SignUpPage"
+             Title="Signup"
+             NavigationPage.HasBackButton="True">
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="FillAndExpand"
+        Margin="50"
+        Orientation="Vertical"
+        Spacing="10">
+
+        <Entry x:Name="name"
+            Placeholder="Name"
+            HorizontalOptions="Center"
+            WidthRequest="250"/>
+        <Entry x:Name="lastName"
+            Placeholder="Last Name"
+            HorizontalOptions="Center"
+            WidthRequest="250"/>
+        <Entry x:Name="email"
+            Keyboard="Email"
+            Placeholder="Email"
+            HorizontalOptions="Center"
+            WidthRequest="250"/>
+        <Entry x:Name="password"
+           Placeholder="Password" 
+           IsPassword="True" 
+           HorizontalOptions="Center"
+           WidthRequest="250"/>
+        <Label Text="Password length must be >= 6"
+           HorizontalOptions="Center"
+           TextColor="{StaticResource grey}"
+           FontSize="15"
+           FontAttributes="Bold" />
+        <Button Text="Signup" 
+           HorizontalOptions="Center" 
+           BackgroundColor="{StaticResource colorPrimary}"
+           Clicked="Signup"/>
+           
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MPB.IntroPage"
+             Title="My Personal Budget"
+             NavigationPage.HasBackButton="False">
+
+
+    <StackLayout
+        VerticalOptions="StartAndExpand"
+        HorizontalOptions="FillAndExpand"
+        Margin="50, 100" 
+        Orientation="Vertical"
+        Spacing="10">
+        <Image Source="logo.png" 
+               Aspect="AspectFit" 
+               WidthRequest="225"
+               HeightRequest="80"
+               HorizontalOptions="Center"/>
+
+        <Label Text="My Budget: the complete system for your finances"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource colorAccent}"
+               FontSize="25"
+               FontAttributes="Bold" />
+
+        <StackLayout
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="FillAndExpand"
+            Margin="30"
+            Orientation="Horizontal"
+            Spacing="10">
+
+            <Button Text="Login" 
+            HorizontalOptions="EndAndExpand" 
+            BackgroundColor="{StaticResource colorPrimary}"
+            Clicked="GoToLogin"/>
+
+
+            <Button Text="Signup" 
+            HorizontalOptions="EndAndExpand" 
+            BackgroundColor="{StaticResource colorPrimary}"
+            Clicked="GoToSignup"/>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
