@@ -8,7 +8,7 @@
                 Priority="1" Order="Secondary"  Clicked="Profile"/>
         <ToolbarItem Text ="Edit Profile"  
               Priority="2" Order="Secondary" Clicked="EditProfile" />
-        <ToolbarItem Text ="Edit Password"  
+        <ToolbarItem Text ="Change Password"  
               Priority="3" Order="Secondary" Clicked="EditPassword" />
         <ToolbarItem Text ="Logout"  
               Priority="4" Order="Secondary" Clicked="SignOut" />
