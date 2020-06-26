@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MPB.IntroPage"
-             Title="My Personal Budget"
+             Title="MPB"
              NavigationPage.HasBackButton="False">
 
 
@@ -18,7 +18,7 @@
                HeightRequest="80"
                HorizontalOptions="Center"/>
 
-        <Label Text="My Budget: the complete system for your finances"
+        <Label Text="My Personal Budget: the complete system for your finances"
                HorizontalOptions="Center"
                TextColor="{StaticResource colorAccent}"
                FontSize="25"
