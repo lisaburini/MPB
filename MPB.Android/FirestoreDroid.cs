@@ -176,23 +176,19 @@ namespace MPB.Droid
             var app = FirebaseApp.Instance;
             db = FirebaseFirestore.GetInstance(app);
             Query allTransactionsQuery = db.Collection("utenti").Document(uid).
-                Collection("transazioni"); //vettore lista documenti
-            QuerySnapshot allTransactionsQuerySnapshot = (QuerySnapshot)await allTransactionsQuery.Get(); //vettore lista delle informazioni (dati) di ogni documento
+                Collection("transazioni"); //lista documenti
+            QuerySnapshot allTransactionsQuerySnapshot = (QuerySnapshot)await allTransactionsQuery.Get(); //lista delle informazioni (dati) di ogni documento
 
             foreach (DocumentSnapshot documentSnapshot in allTransactionsQuerySnapshot.Documents)
             {
                 if (String.Equals(documentSnapshot.GetString("tipologia"), "Earnings"))
                 {
-                    //sum += (float)documentSnapshot.Get("cifra");
-                    //sum += float.Parse(documentSnapshot.GetString("cifra"));
-                    //Math.Round(val, 2)
                     sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
                    
 
                 }
                 else if (String.Equals(documentSnapshot.GetString("tipologia"), "Outflows"))
                 {
-                    //sum -= (float)documentSnapshot.Get("cifra");
                     sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
                 }
                
@@ -301,7 +297,6 @@ namespace MPB.Droid
 
             foreach (DocumentSnapshot documentSnapshot in allTransactionsQuerySnapshot.Documents)
             {
-                //sum += (float)documentSnapshot.Get("cifra");
                 sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
             }
 
