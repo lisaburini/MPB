@@ -292,8 +292,8 @@ namespace MPB.Droid
             var app = FirebaseApp.Instance;
             db = FirebaseFirestore.GetInstance(app);
             Query allTransactionsQuery = db.Collection("utenti").Document(uid).
-                Collection("transazioni").WhereEqualTo("tipologia", "Earnings"); //vettore lista documenti
-            QuerySnapshot allTransactionsQuerySnapshot = (QuerySnapshot)await allTransactionsQuery.Get(); //vettore lista delle informazioni (dati) di ogni documento
+                Collection("transazioni").WhereEqualTo("tipologia", "Earnings"); //lista documenti
+            QuerySnapshot allTransactionsQuerySnapshot = (QuerySnapshot)await allTransactionsQuery.Get(); //lista delle informazioni (dati) di ogni documento
 
             foreach (DocumentSnapshot documentSnapshot in allTransactionsQuerySnapshot.Documents)
             {
@@ -312,8 +312,8 @@ namespace MPB.Droid
             var app = FirebaseApp.Instance;
             db = FirebaseFirestore.GetInstance(app);
             Query allTransactionsQuery = db.Collection("utenti").Document(uid).
-                Collection("transazioni").WhereEqualTo("tipologia", "Outflows"); //vettore lista documenti
-            QuerySnapshot allTransactionsQuerySnapshot = (QuerySnapshot)await allTransactionsQuery.Get(); //vettore lista delle informazioni (dati) di ogni documento
+                Collection("transazioni").WhereEqualTo("tipologia", "Outflows"); //lista documenti
+            QuerySnapshot allTransactionsQuerySnapshot = (QuerySnapshot)await allTransactionsQuery.Get(); //lista delle informazioni (dati) di ogni documento
 
             foreach (DocumentSnapshot documentSnapshot in allTransactionsQuerySnapshot.Documents)
             {
