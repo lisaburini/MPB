@@ -16,9 +16,13 @@ namespace MPB
 
         private async void Edit(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(oldPassword.Text) || String.IsNullOrEmpty(oldPassword.Text))
+            if (String.IsNullOrEmpty(oldPassword.Text) || String.IsNullOrEmpty(newPassword.Text))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Try Again", "OK");
+                await App.Current.MainPage.DisplayAlert("Error", "Please, fill all fields", "OK");
+
+            } else if (newPassword.Text.Length < 6)
+            {
+                await App.Current.MainPage.DisplayAlert("Error", "New Password must be at least 6 characters", "OK");
             }
             else
             {

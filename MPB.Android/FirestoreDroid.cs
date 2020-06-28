@@ -17,7 +17,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using MPB.Models;
 using Transaction = MPB.Models.Transaction;
-
+using System.Globalization;
 
 [assembly: Dependency(typeof(FirestoreDroid))]
 namespace MPB.Droid
@@ -26,6 +26,7 @@ namespace MPB.Droid
     public class FirestoreDroid : IFirestore
     {
         public ObservableCollection<Transaction> ListTransactions { get; private set; }
+        IFormatProvider provider = CultureInfo.CreateSpecificCulture("en-US");
 
         public async Task<string[]> GetData()
         {
@@ -61,12 +62,10 @@ namespace MPB.Droid
                 database = FirebaseFirestore.GetInstance(app);
 
                 DocumentReference docRef = database.Collection("utenti").Document(uid);
-                if (!String.IsNullOrEmpty(name) && !String.IsNullOrEmpty(lastName))
-                {
-                    var task = await docRef.Update("nome", name, "cognome", lastName);
-                    return task.ToString(); //.update ritorna task<void>
-                }
-                else return "error";
+
+                var task = await docRef.Update("nome", name, "cognome", lastName);
+                //return task.ToString(); //.update ritorna task<void>
+                return "ok";
             }
             catch (Exception)
             {
@@ -160,7 +159,7 @@ namespace MPB.Droid
                 {
                     Type = documentSnapshot.GetString("tipologia"),
                     Category = documentSnapshot.GetString("categoria"),
-                    Money = documentSnapshot.GetString("cifra"),
+                    Money = (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra"), provider), 2),
                     Date = documentSnapshot.GetString("data")
                 });
             }
@@ -183,13 +182,13 @@ namespace MPB.Droid
             {
                 if (String.Equals(documentSnapshot.GetString("tipologia"), "Earnings"))
                 {
-                    sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
+                    sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra"), provider), 2);
                    
 
                 }
                 else if (String.Equals(documentSnapshot.GetString("tipologia"), "Outflows"))
                 {
-                    sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
+                    sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra"), provider), 2);
                 }
                
 
@@ -228,7 +227,7 @@ namespace MPB.Droid
                     {
                         Type = documentSnapshot.GetString("tipologia"),
                         Category = documentSnapshot.GetString("categoria"),
-                        Money = documentSnapshot.GetString("cifra"),
+                        Money = (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra"), provider), 2),
                         Date = documentSnapshot.GetString("data")
                     });
                 }
@@ -258,11 +257,11 @@ namespace MPB.Droid
             {
                 if (String.Equals(documentSnapshot.GetString("tipologia"), "Earnings"))
                 {
-                    sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
+                    sum += (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra"), provider), 2);
                 }
                 else if (String.Equals(documentSnapshot.GetString("tipologia"), "Outflows"))
                 {
-                    sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra")), 2);
+                    sum -= (float)Math.Round(float.Parse(documentSnapshot.GetString("cifra"), provider), 2);
                 }
 
             }

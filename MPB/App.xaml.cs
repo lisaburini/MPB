@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,7 @@ namespace MPB
         public App()
         {
             InitializeComponent();
+            SetCultureToUSEnglish();
 
             if (DependencyService.Get<IAuth>().IsUserLoggedIn())
             {
@@ -33,6 +35,12 @@ namespace MPB
 
         protected override void OnResume()
         {
+        }
+
+        private void SetCultureToUSEnglish()
+        {
+            CultureInfo englishUSCulture = new CultureInfo("en-US");
+            CultureInfo.DefaultThreadCurrentCulture = englishUSCulture;
         }
     }
 }

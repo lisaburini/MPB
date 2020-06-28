@@ -17,14 +17,10 @@ namespace MPB
 
         private async void Edit(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(name.Text) && String.IsNullOrEmpty(lastName.Text))
-            {
-                await App.Current.MainPage.DisplayAlert("Error", "Try Again", "OK");
-            }
-            else
+            
             if (String.IsNullOrEmpty(name.Text) || String.IsNullOrEmpty(lastName.Text))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Try Again", "OK");
+                await App.Current.MainPage.DisplayAlert("Error", "Please, fill all fields", "OK");
             }
 
             else
@@ -32,7 +28,13 @@ namespace MPB
 
                 var token = await firestore.EditData(name.Text, lastName.Text);
 
-                App.Current.MainPage = new MainPage();
+                if(!string.Equals(token, "error"))
+                {
+                    App.Current.MainPage = new MainPage();
+                } else
+                {
+                    await App.Current.MainPage.DisplayAlert("Error", "Something went wrong", "OK");
+                }
 
             }
         }

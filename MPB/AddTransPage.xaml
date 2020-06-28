@@ -10,13 +10,13 @@
             Orientation="Horizontal" >
         <Button Text="Earnings" 
                 BackgroundColor="{StaticResource colorPrimary}"
-                WidthRequest="100"
+                WidthRequest="110"
                 Clicked="AddEarnings"/>
 
 
         <Button Text="Outflows" 
              BackgroundColor="{StaticResource grey}"
-             WidthRequest="100"
+             WidthRequest="110"
              Clicked="AddOutflows"/>
     </StackLayout>
 

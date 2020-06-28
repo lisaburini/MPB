@@ -25,14 +25,13 @@ namespace MPB
             }
             else if (!IsDigitsOnly(money.Text))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Insert only digits and dot", "OK");
+                await App.Current.MainPage.DisplayAlert("Error", "Insert only digits, dot or comma", "OK");
             }
             else
             {
                 string category = EarningsCategory.SelectedItem.ToString();
-
-                //float moneyTrans = float.Parse(money.Text);
-                string moneyTrans = money.Text; //valore da salvare nel campo cifra
+                string moneyTrans = money.Text.Replace(',', '.'); //se valore contiene virgola viene sostituita
+                
 
                 string task = await firestore.AddTransaction(category, moneyTrans);
                 if (String.Equals(task, "ok"))
@@ -53,7 +52,7 @@ namespace MPB
                 if (!String.Equals(c, '0') && !String.Equals(c, '1') && !String.Equals(c, '2')
                     && !String.Equals(c, '3') && !String.Equals(c, '4') && !String.Equals(c, '5')
                     && !String.Equals(c, '6') && !String.Equals(c, '7') && !String.Equals(c, '8')
-                    && !String.Equals(c, '9') && !String.Equals(c, '.'))
+                    && !String.Equals(c, '9') && !String.Equals(c, '.') && !String.Equals(c, ','))
                     return false;
             }
             return true;

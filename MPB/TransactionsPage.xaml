@@ -21,7 +21,7 @@
                 <Picker x:Name="PickerCategory"
                         IsVisible= 'True'
                         IsEnabled= 'True'
-                        WidthRequest="100"
+                        WidthRequest="115"
                         HeightRequest="50"
                         HorizontalOptions="Start"
                         Title="Categories"
@@ -47,8 +47,9 @@
                    x:Name="labelSum"
                    TextColor="{StaticResource colorPrimary}"
                    HorizontalTextAlignment="Center"
-                   FontSize="40"
+                   FontSize="30"
                    FontAttributes="Bold"
+                   HeightRequest="100"
                    HorizontalOptions="CenterAndExpand"/>
         </StackLayout>
         <Grid>
@@ -71,7 +72,7 @@
                                    FontAttributes="Bold"
                                    HorizontalTextAlignment="End"
                                    HorizontalOptions="EndAndExpand"
-                                   Margin="0, 0, 80, 0"></Label>
+                                   Margin="10, 0, 0, 0"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

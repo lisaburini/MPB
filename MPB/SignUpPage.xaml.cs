@@ -15,6 +15,23 @@ namespace MPB
 
         async private void Signup(object sender, EventArgs e)
         {
+            var nameValue = name.Text;
+            var lastNameValue = lastName.Text;
+            var emailValue = email.Text;
+            var passwordValue = password.Text;
+            if (string.IsNullOrEmpty(nameValue) || string.IsNullOrEmpty(lastNameValue) || string.IsNullOrEmpty(emailValue) || string.IsNullOrEmpty(passwordValue))
+            {
+                await App.Current.MainPage.DisplayAlert("Empty Values", "Please fill all fields", "OK");
+                return;
+            }
+
+            if (passwordValue.Length < 6  )
+            {
+                await App.Current.MainPage.DisplayAlert("Password too short", "Password must be at least 6 characters", "OK");
+                return;
+            }
+
+
             string Token = await auth.SignUp(email.Text, password.Text, name.Text, lastName.Text);
 
             if (Token != null)
